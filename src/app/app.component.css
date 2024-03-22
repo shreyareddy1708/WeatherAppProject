@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .weacontainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .weacolumn {
+    flex: 1;
+  }
+  .autocomplet {
+    margin-top: 10px;
+  }
+
+  

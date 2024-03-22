@@ -1,0 +1,31 @@
+<div class="component">
+    <div class="vcomponent">
+        <div class="container responsive-grid">
+            <mat-card *ngFor="let card of dailyWeather">
+              <mat-card-header >
+                <div class="weacontainer">
+                    <div class="weacolumn">
+                        <img mat-card-image [src]="'https://openweathermap.org/img/wn/' + card.weather[0].icon + '@2x.png'"  class="weatherImg " />
+                    </div>
+                    <div class="weacolumn weacolumncenter">
+                       <p class="spandt center">{{ card.dt | utcLocdate: TimeOffset }} </p> 
+                       <p class="spandt center">{{card.weather[0].description}}</p> 
+                    </div>
+                    <div class="weacolumn">
+                        <div class="weacontainer">
+                            <div class="weacolumn spandt">
+                                {{card.temp.max}}°C
+                            </div>
+                            <div class="weacolumn spandt">
+                                {{card.temp.min}}°C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </mat-card-header>
+              
+            </mat-card>
+          </div>
+    </div>
+    
+</div>

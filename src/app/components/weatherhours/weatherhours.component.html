@@ -1,0 +1,21 @@
+
+<div class="component">
+    <div class="horizontal">
+        <div class="card" *ngFor="let hweather of hourlyWeather">
+            <p class="parCenter">
+                {{hweather.temp }}°C
+            </p>
+            <p class="paragrapHumdityStyle">
+                {{hweather.humidity  }}%
+            </p>
+            <p class="parCenter">
+                <img [alt]="hweather.weather[0]" [src]="'https://openweathermap.org/img/wn/' + hweather.weather[0].icon + '@2x.png'" />
+
+            </p>
+            <p class="parCenter">
+               {{ hweather.dt | utcToDate: TimeOffset }}
+
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+
+
+<style>
+  
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(to right top, #447fd6, #4777b9, #4c6f9b, #52667e, #575c62);
+}
+.container {
+  margin-top: 24px;
+  height: 95%;
+  width: 80%;
+  background-color: #fefefe;
+}
+.heading {
+  text-align: center;
+  color: white;
+  width: 100%;
+  background-color: #447fd6;
+}
+ 
+</style>
+
+<main class="main">
+  <div class="container">
+    <div class="heading">
+      <div class="weacontainer">
+        <div class="weacolumn">
+          <h2 class="autocomplet">
+            Simple weather 
+         </h2>
+   
+        </div>
+        <div class="weacolumn autocomplet">
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label> search City</mat-label>
+            <input type="text" matInput  [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event)">
+              @for (option of cityoptions; track option) {
+                <mat-option [value]="option">{{option.city_name}}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field> -->
+        </div>
+      </div>
+      
+    </div>
+    <div>
+      <mat-tab-group>
+        <mat-tab label="RIO DE JANERIO"> 
+            <app-weatherhours [hourlyWeather]= "RioHoursArray" [TimeOffset]="RioTimeZoneOffset" ></app-weatherhours>
+            <app-weatherdaily [dailyWeather]="RioDailyArray" [TimeOffset]="RioTimeZoneOffset"></app-weatherdaily>
+           <div class="center">
+            <button mat-button color="primary" (click)="loadRioDat()">Load</button>
+
+           </div>
+            
+            
+        </mat-tab>
+        <mat-tab label="BEIJING"> 
+           <app-weatherhours [hourlyWeather] = "BejHoursArray" [TimeOffset]="BejTimeZoneOffset"></app-weatherhours>
+           <app-weatherdaily [dailyWeather]="BejDailyArray" [TimeOffset]="BejTimeZoneOffset"></app-weatherdaily>
+           <div class="center">
+            <button mat-button color="primary" (click)="loadBejDat()">Load</button>
+
+           </div>
+         </mat-tab>
+        <mat-tab label="LOS ANGELES"> 
+          <app-weatherhours [hourlyWeather] = "LAHoursArray" [TimeOffset]="LATimeZoneOffset"></app-weatherhours>
+          <app-weatherdaily [dailyWeather]="LADailyArray" [TimeOffset]="LATimeZoneOffset"></app-weatherdaily>
+          <div class="center">
+            <button mat-button color="primary" (click)="loadlaDat()">Load</button>
+
+           </div>
+        </mat-tab>
+      </mat-tab-group>
+      
+    </div>
+  </div>
+</main>
+
+
+
+
+<router-outlet />
